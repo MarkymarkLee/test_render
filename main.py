@@ -12,7 +12,7 @@ waiting_users: Queue = Queue()
 paired_users = {}
 
 
-@app.post("/pairUser/{user_id}")
+@app.get("/pairUser/{user_id}")
 async def pair_user(user_id: str):
     if user_id in paired_users:
         return {"chatId": paired_users[user_id]}
